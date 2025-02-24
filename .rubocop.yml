@@ -1,0 +1,255 @@
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.4.1
+  DisabledByDefault: true
+  SuggestExtensions: false
+  Exclude:
+    - "app/javascript/**/*"
+    - "app/assets/**/*"
+    - "app/views/**/*.erb"
+    - "lib/tasks/**/*"
+    - ".vscode/**/*"
+    - ".bundle/**/*"
+    - "**/log/**/*"
+    - "**/public/**/*"
+    - "**/tmp/**/*"
+    - "node_modules/**/*"
+    - "bin/**/*"
+    - "db/schema.rb"
+
+# Access Modifier Rules
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Lint/UselessAccessModifier:
+  Enabled: true
+
+Style/AccessModifierDeclarations:
+  Enabled: true
+
+Layout/AccessModifierIndentation:
+  Enabled: true
+
+# Class and Module Structure
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/ClassStructure:
+  Enabled: true
+  Description: "Enforces a canonical order of definitions within a class body."
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#consistent-classes"
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+
+# Method Calls and Definitions
+Layout/DotPosition:
+  Enabled: true
+  EnforcedStyle: leading
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+Lint/RequireParentheses:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+  AllowMultipleReturnValues: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+Style/DefWithParentheses:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+# Parameter and Argument Formatting
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: indented_internal_methods
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/FirstParameterIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/FirstArgumentIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/ArgumentAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+# Method Body Layout
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# Hash Formatting
+Layout/HashAlignment:
+  Enabled: true
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+  EnforcedStyle: new_line
+
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Style/HashSyntax:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+
+# Spacing Rules
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+  AllowForAlignment: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+# Whitespace and Empty Lines
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/EndOfLine:
+  Enabled: true
+  EnforcedStyle: lf
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+# Control Flow
+Style/AndOr:
+  Enabled: true
+
+Layout/CaseIndentation:
+  Enabled: true
+
+# Line Length and Indentation
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+  AllowedPatterns: ['^\s*#', '^\s*"', "^\\s*'", '"$', "'$", '\/$']
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+Layout/IndentationStyle:
+  Enabled: true
+  EnforcedStyle: spaces
+
+Layout/ExtraSpacing:
+  Enabled: true
+  AllowForAlignment: false
+
+# Style Rules
+Style/ParenthesesAroundCondition:
+  Enabled: true
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/RedundantPercentQ:
+  Enabled: true
+
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: false
+
+# Additional Lint Rules
+Lint/BooleanSymbol:
+  Enabled: true
+
+Lint/AssignmentInCondition:
+  Enabled: true
+  AllowSafeAssignment: true
+
+# Bundle Rules
+Bundler/OrderedGems:
+  Enabled: true
+  TreatCommentsAsGroupSeparators: true
+
+# Transform Rules
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/RedundantBegin:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/ColonMethodCall:
+  Enabled: true
+
+Style/TrivialAccessors:
+  Enabled: true
