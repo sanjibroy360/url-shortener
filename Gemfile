@@ -47,3 +47,4 @@ group :development do
   gem "rubocop-performance"
   gem "rubocop-rails"
 end
+gem "rack-cors"
