@@ -5,7 +5,7 @@ class Url < ApplicationRecord
   ALLOWED_SCHEMES = %w[http https].freeze
 
   before_validation :normalize_url
-  before_create :generate_unique_short_code
+  before_validation :generate_unique_short_code, on: :create
 
   validates :long_url,
     presence: { message: "URL cannot be blank" },
@@ -21,6 +21,20 @@ class Url < ApplicationRecord
       message: "has already been taken. Please try a different code"
     },
     length: { is: SHORT_CODE_LENGTH }
+
+  def full_short_url(request)
+    "#{request.base_url}/#{short_code}"
+  end
+
+  def to_response(request)
+    {
+      id: id,
+      long_url: long_url,
+      short_code: short_code,
+      shortened_url: full_short_url(request),
+      created_at: created_at
+    }
+  end
 
   private
 
