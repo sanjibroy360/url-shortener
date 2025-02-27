@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 class Url < ApplicationRecord
+  include UrlValidations
+
   SHORT_CODE_LENGTH = 6
-  ALLOWED_SCHEMES = %w[http https].freeze
 
   before_validation :normalize_url
   before_validation :generate_unique_short_code, on: :create
 
   validates :long_url,
-    presence: { message: "URL cannot be blank" },
+    presence: { message: "Long url cannot be blank" },
     format: {
       without: /\s/,
       message: "cannot contain spaces"
     }
-  validate :validate_long_url
 
   validates :short_code,
     presence: { message: "Short code cannot be blank" },
@@ -39,16 +39,7 @@ class Url < ApplicationRecord
   private
 
     def normalize_url
-      self.long_url = long_url.strip if long_url.present?
-    end
-
-    def validate_long_url
-      uri = URI.parse(long_url)
-      unless ALLOWED_SCHEMES.include?(uri.scheme)
-        errors.add(:long_url, "must start with HTTP or HTTPS")
-      end
-    rescue URI::InvalidURIError
-      errors.add(:long_url, "is not a valid URL")
+      self.long_url = long_url.strip.downcase if long_url.present?
     end
 
     def generate_unique_short_code
