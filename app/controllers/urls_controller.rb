@@ -13,7 +13,7 @@ class UrlsController < ApplicationController
     @url = Url.create(url_params)
 
     if @url.persisted?
-      render json: { notice: "Successfuly created shortend URL", url: @url.to_response(request)}
+      render json: { notice: "Successfuly created shortend URL", url: @url.to_response(request) }
     else
       render json: { errors: @url.errors.full_messages }, status: 422
     end

@@ -9,7 +9,7 @@ class Url < ApplicationRecord
   before_validation :generate_unique_short_code, on: :create
 
   validates :long_url,
-    presence: { message: "Long url cannot be blank" },
+    presence: { message: "cannot be blank" },
     format: {
       without: /\s/,
       message: "cannot contain spaces"
