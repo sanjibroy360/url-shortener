@@ -1,24 +1,74 @@
-# README
+# URL Shortener API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A RESTful API for creating shortened URLs.
 
-Things you may want to cover:
+## Demo Video
 
-* Ruby version
+[https://www.loom.com/share/b02c7975f59944ed8a6204ff5a63d608?sid=7dfb99c8-d49a-45ed-9481-4a4cc5dfcc52](https://www.loom.com/share/b02c7975f59944ed8a6204ff5a63d608?sid=7dfb99c8-d49a-45ed-9481-4a4cc5dfcc52)
 
-* System dependencies
+## 🛠️ Tech Stack
 
-* Configuration
+- **Ruby on Rails 7+**
+- **Ruby 3.2.4**
 
-* Database creation
+## ⚙️ Installation
 
-* Database initialization
+Want to check out the project on your own machine? Here's how you can get started:
 
-* How to run the test suite
+1. **Clone the repository**
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+git git@github.com:sanjibroy360/url-shortener.git
+```
 
-* Deployment instructions
+2. **Navigate to the Project Directory**
 
-* ...
+```bash
+cd url-shortener
+```
+
+3. **Install Dependencies**
+
+```bash
+bundle install
+```
+
+4. **Set Up the Database**
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+5. **Start the Rails Server**
+
+```bash
+rails server
+```
+
+## APIs
+
+### Get all shortened URLs
+
+- Endpoint: `http://localhost:3000/urls` **[GET]**
+
+### Create shortened URL
+
+- Endpoint: `http://localhost:3000/urls` **[POST]**
+- Demo payload:
+
+```ruby
+    {
+      url: {
+        long_url: 'https://sanjibroy.com'
+      }
+    }
+```
+
+### Delete any shortened URL
+
+- Endpoint: `http://localhost:3000/urls/:short_code` **[GET]**
+
+### Visit any shortened URL
+
+- Endpoint: `http://localhost:3000/:short_code` **[GET]**
